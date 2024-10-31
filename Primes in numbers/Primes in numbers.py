@@ -1,4 +1,30 @@
 def prime_factors(n):
+    if n > 0:
+        i = 2
+        p = {} 
+        r=''
+        while n != 1:
+            if n % i == 0:
+                if f'{i}' in p:
+                    p[f'{i}'] += 1
+                else:
+                    p[f'{i}'] = 1
+                n = n // i
+            else:
+                i += 1
+                
+        for number in p :
+            print(number)
+            print(p[number])
+            if p[number] == 1 :
+                r=r+f'({number})'
+            else :
+                r=r+f'({number}**{p[number]})'
+        return r
+   
+
+
+def prime_factors2(n):
     if n > 0 :
         i=2
         PrevI=i
